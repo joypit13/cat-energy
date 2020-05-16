@@ -1,0 +1,30 @@
+{
+  "name": "cat-energy",
+  "description": "practice",
+  "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "latest",
+    "autoprefixer": "latest",
+    "browser-sync": "latest",
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-csso": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-less": "latest",
+    "gulp-plumber": "latest",
+    "gulp-postcss": "latest",
+    "gulp-posthtml": "latest",
+    "gulp-rename": "latest",
+    "gulp-svgstore": "latest",
+    "gulp-webp": "latest",
+    "posthtml-include": "latest",
+    "stylelint": "latest",
+    "stylelint-config-htmlacademy": "latest"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
+    "test": "npm run editorconfig && npm run stylelint",
+    "build": "gulp build",
+    "start": "npm run build && gulp serve"
+  }
+}

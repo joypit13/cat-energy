@@ -1,0 +1,94 @@
+.mobile-demo {
+  position: relative;
+
+  margin: 0 auto;
+  width: 84px;
+  height: 14px;
+
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
+  background-color: #ffffff;
+}
+
+.mobile-demo__label {
+  position: absolute;
+  top: -4px;
+
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+
+  &--before {
+    left: -60px;
+  }
+
+  &--after {
+    right: -60px;
+  }
+}
+.mobile-demo__button--before + label::before {
+  content: "";
+
+  position: absolute;
+  top: 3px;
+  left: 65px;
+
+  width: 35px;
+  height: 14px;
+
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+.mobile-demo__button--after + label::after {
+  content: "";
+
+  position: absolute;
+  top: 3px;
+  right: 65px;
+
+  box-sizing: border-box;
+
+  width: 35px;
+  height: 14px;
+
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+.mobile-demo__button--before:checked + label::before {
+  content: "";
+
+  position: absolute;
+  top: 7px;
+  left: 65px;
+
+  width: 35px;
+  height: 6px;
+
+  background-color: #68b738;
+  border-radius: 3px;
+}
+
+.mobile-demo__button--after:checked + label::after {
+  content: "";
+
+  position: absolute;
+  top: 7px;
+  right: 65px;
+
+  width: 35px;
+  height: 6px;
+
+  background-color: #68b738;
+  border-radius: 3px;
+}
+
+.example__image {
+  display: none;
+}
+
+.show-demo {
+  display: block;
+}
