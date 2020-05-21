@@ -3,9 +3,11 @@
   justify-content: space-between;
   align-items: center;
 
-  margin: 0 auto;
+  position: relative;
+
+  margin: 0;
   padding: 0 20px;
-  padding-top: 10px;
+  padding-top: 12px;
   padding-bottom: 15px;
 
   width: 320px;
@@ -14,11 +16,22 @@
 }
 
 .logobar__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 70%;
+
   text-decoration: none;
 }
 
-.logobar__title-logo {
+.logobar__logo {
+  &--tablet {
+    display: none;
+  }
 
+  &--desktop {
+    display: none;
+  }
 }
 
 .logobar__toggle {
@@ -76,5 +89,58 @@
         #111111 16px
       );
     }
+  }
+}
+
+@media (min-width: @tablet-width) {
+
+  .logobar {
+    display: flex;
+
+    padding: 0;
+    max-width: 180px;
+
+    border: none;
+  }
+
+  .logobar__link {
+    width: 250px;
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  .logobar__logo {
+    &--mobile,
+    &--desktop {
+      display: none;
+    }
+
+    &--tablet {
+      display: block;
+    }
+  }
+
+  .logobar__title-logo {
+    display: none;
+  }
+
+  .logobar__toggle {
+    display: none;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .logobar__logo--tablet {
+    display: none;
+  }
+
+  .logobar__logo--desktop {
+    display: block;
   }
 }

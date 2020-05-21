@@ -1,7 +1,6 @@
 .contacts {
   padding: 0;
   margin: 0 auto;
-  width: 320px;
 }
 
 .contacts__wrapper {
@@ -29,5 +28,31 @@
 .contacts__map {
   padding: 0;
   margin: 0;
-  height: 400px;
+}
+
+@media (min-width: @desktop-width) {
+  .contacts {
+    position: relative;
+  }
+
+  .contacts__wrapper {
+    justify-content: flex-start;
+    position: absolute;
+    top: 95px;
+    left: 110px;
+    z-index: 100;
+
+    padding: 65px 80px;
+
+    width: 570px;
+    height: 200px;
+
+    background-color: #ffffff;
+  }
+
+  .contacts__title {
+    font-size: 20px;
+    line-height: 25px;
+    margin-right: 80px;
+  }
 }

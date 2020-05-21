@@ -14,6 +14,8 @@
   position: absolute;
   top: -4px;
 
+  padding-bottom: 5px;
+
   font-size: 16px;
   text-transform: uppercase;
   cursor: pointer;
@@ -91,4 +93,19 @@
 
 .show-demo {
   display: block;
+}
+
+@media (min-width: @tablet-width) {
+  .mobile-demo__label {
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.4);
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.23);
+    }
+
+    &:active {
+      border-bottom: none;
+    }
+  }
 }
