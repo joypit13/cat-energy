@@ -1,0 +1,146 @@
+.logobar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+
+  margin: 0;
+  padding: 0 20px;
+  padding-top: 12px;
+  padding-bottom: 15px;
+
+  width: 320px;
+
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.logobar__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 70%;
+
+  text-decoration: none;
+}
+
+.logobar__logo {
+  &--tablet {
+    display: none;
+  }
+
+  &--desktop {
+    display: none;
+  }
+}
+
+.logobar__toggle {
+  position: relative;
+  width: 24px;
+  height: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &--opened {
+    &::before,
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 9px;
+      left: -2px;
+
+      width: 24px;
+      height: 2px;
+
+      background-color: black;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &--closed {
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 24px;
+      height: 18px;
+
+      background: linear-gradient(
+        #111111 0px,
+        #111111 2px,
+        transparent 2px,
+        transparent 8px,
+        #111111 8px,
+        #111111 10px,
+        transparent 10px,
+        transparent 16px,
+        #111111 16px
+      );
+    }
+  }
+}
+
+@media (min-width: @tablet-width) {
+
+  .logobar {
+    display: flex;
+
+    padding: 0;
+    max-width: 180px;
+
+    border: none;
+  }
+
+  .logobar__link {
+    width: 250px;
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  .logobar__logo {
+    &--mobile,
+    &--desktop {
+      display: none;
+    }
+
+    &--tablet {
+      display: block;
+    }
+  }
+
+  .logobar__title-logo {
+    display: none;
+  }
+
+  .logobar__toggle {
+    display: none;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .logobar__logo--tablet {
+    display: none;
+  }
+
+  .logobar__logo--desktop {
+    display: block;
+  }
+}
